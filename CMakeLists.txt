@@ -5,7 +5,7 @@ set(CMAKE_CXX_STANDARD 17)
 # 在arm的MacBook上进行的调整
 set(CMAKE_OSX_ARCHITECTURES  "arm64" CACHE STRING "Build architectures for Mac OS X" FORCE)
 
-# 引入本地库 其中又glad库
+# 引入本地库 其中有glad库
 set(LOCAL_H /opt/homebrew/include)
 include_directories(${LOCAL_H})
 
