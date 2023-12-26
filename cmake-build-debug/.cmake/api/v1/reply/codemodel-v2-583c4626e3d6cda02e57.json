@@ -1,0 +1,60 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.26"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "3D_ROOM",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "3D_ROOM::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-3D_ROOM-Debug-eaeaef87657b677343db.json",
+					"name" : "3D_ROOM",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/plotnickslope/Desktop/\u5b66\u4e60\u8d44\u6599/\u8ba1\u7b97\u673a\u56fe\u5f62\u5b66/\u4f5c\u4e1a/3D_ROOM/cmake-build-debug",
+		"source" : "/Users/plotnickslope/Desktop/\u5b66\u4e60\u8d44\u6599/\u8ba1\u7b97\u673a\u56fe\u5f62\u5b66/\u4f5c\u4e1a/3D_ROOM"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 5
+	}
+}
