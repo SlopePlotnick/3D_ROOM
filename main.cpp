@@ -43,25 +43,6 @@ float blackMat[] = { 0.0f,0.0f,0.0f,1.0f };
 float ambientMat[] = { 0.1f,0.1f,0.1f,1.0f };
 float diffuseMat[] = { 0.4f,0.4f,0.4f,1.0f };
 float specularMat[] = { 0.9f,0.9f,0.9f,1.0f };
-GLfloat matBlack[] = {0, 0, 0, 1};
-GLfloat matWhite[] = {1, 1, 1, 1};
-GLfloat matPink[] = {1, 0.8, 0.2, 1};
-GLfloat matBrown[] = {1, 0.6, 0.3, 1};
-GLfloat matYellowGreen[] = {0.5, 1, 0.5, 1};
-GLfloat matRed[] = {1, 0, 0, 1};
-GLfloat matGreen[] = {0, 1, 0, 1};
-GLfloat matBlue[] = {0, 0, 1, 1};
-GLfloat matYellow[] = {1, 1, 0, 1};
-GLfloat matShininess[] = {50};
-GLfloat mat_diffuse[] = {0.9, 0.9, 0.9, 1.0};
-GLfloat mat_specular[] = {0.3, 0.3, 0.3, 1.0};
-
-GLfloat mood[] = {0.8, 0.61, 0.11};
-GLfloat matsafe[] = {0.45, 0.65, 0.65, 1};
-GLfloat matszz[] = {0.93, 0.65, 0.65, 1};
-GLfloat matsck[] = {1, 0.984, 0.941, 1};
-GLfloat matglass[] = {0.341, 0.98, 1, 0.3};
-GLfloat matcl[] = {0.96, 0.83, 0.851, 0.5};
 
 GLfloat spot_position[] = { -1.0, -1.0, 0};// 指定聚光灯的方向
 
@@ -106,8 +87,12 @@ void loadTexture(char* filename, GLuint& texture)
 void init(void) // All Setup For OpenGL Goes Here
 {
     // 读取地板纹理
-    char filename1[] = "floor.bmp";
+    char filename1[] = "../src/floor.bmp";
     loadTexture(filename1, texName[0]);
+    char filename2[] = "../src/outside.bmp";
+    loadTexture(filename2, texName[1]);
+//    char filename3[] = "../src/wall.bmp";
+//    loadTexture(filename3, texName[2]);
 
     // OpenGL把现实世界中的光照系统近似归为三部分，分别是光源、材质和光照环境
     // 创建广光源GL_LIGHT1 并设置三个属性GL_POSITION GL_AMBIENT GL_DIFFUSE
@@ -156,6 +141,24 @@ void display(void) // Here's Where We Do All The Drawing
     GLfloat high_shininess[] = {20.0};
     GLfloat high_mat[] = {1.0,1.0,1.0,1.0};
 
+    GLfloat matBlack[] = {0, 0, 0, 1};
+    GLfloat matWhite[] = {1, 1, 1, 1};
+    GLfloat matPink[] = {1, 0.8, 0.2, 1};
+    GLfloat matBrown[] = {1, 0.6, 0.3, 1};
+    GLfloat matYellowGreen[] = {0.5, 1, 0.5, 1};
+    GLfloat matRed[] = {1, 0, 0, 1};
+    GLfloat matGreen[] = {0, 1, 0, 1};
+    GLfloat matBlue[] = {0, 0, 1, 1};
+    GLfloat matYellow[] = {1, 1, 0, 1};
+    GLfloat matShininess[] = {50};
+
+    GLfloat mood[] = {0.8, 0.61, 0.11};
+    GLfloat matsafe[] = {0.45, 0.65, 0.65, 1};
+    GLfloat matszz[] = {0.93, 0.65, 0.65, 1};
+    GLfloat matsck[] = {1, 0.984, 0.941, 1};
+    GLfloat matglass[] = {0.341, 0.98, 1, 0.3};
+    GLfloat matcl[] = {0.96, 0.83, 0.851, 0.5};
+
 
     glMaterialfv(GL_FRONT, GL_AMBIENT, no_mat);
     glMaterialfv(GL_FRONT, GL_DIFFUSE, mat_diffuse);
@@ -200,7 +203,7 @@ void display(void) // Here's Where We Do All The Drawing
     glDisable(GL_TEXTURE_2D);
     // 右墙
     glBegin(GL_QUADS);
-    glColor3f(0.6863, 0.8627, 0.7333);
+    glColor3f(0.6000, 0.7804, 0.9059);
     glVertex3f(275.0f, 165.0f, -220.0f);
     glVertex3f(275.0f, -165.0f, -220.0f);
     glVertex3f(275.0f, -165.0f, 220.0f);
@@ -208,7 +211,7 @@ void display(void) // Here's Where We Do All The Drawing
     glEnd();
     // 左墙
     glBegin(GL_QUADS);
-    glColor3f(0.6863, 0.8627, 0.7333);
+    glColor3f(0.6000, 0.7804, 0.9059);
     glVertex3f(-275.0f, 165.0f, -220.0f);
     glVertex3f(-275.0f, -165.0f, -220.0f);
     glVertex3f(-275.0f, -165.0f, 220.0f);
@@ -236,6 +239,64 @@ void display(void) // Here's Where We Do All The Drawing
     glScalef(400, 90, 5);
     glutSolidCube(1);
     glPopMatrix();
+    // 窗框
+    glBegin(GL_QUADS);
+    glColor3f(0.0549, 0.0980, 0.2078);
+    glVertex3f(-275, 165, -219);
+    glVertex3f(-275, -50, -219);
+    glVertex3f(-265, -50, -219);
+    glVertex3f(-265, 165, -219);
+    glEnd();
+    glBegin(GL_QUADS);
+    glColor3f(0.0549, 0.0980, 0.2078);
+    glVertex3f(-275, 165, -219);
+    glVertex3f(-275, 155, -219);
+    glVertex3f(275, 155, -219);
+    glVertex3f(275, 165, -219);
+    glEnd();
+    glBegin(GL_QUADS);
+    glColor3f(0.0549, 0.0980, 0.2078);
+    glVertex3f(275, 165, -219);
+    glVertex3f(275, -50, -219);
+    glVertex3f(265, -50, -219);
+    glVertex3f(265, 165, -219);
+    glEnd();
+    glBegin(GL_QUADS);
+    glColor3f(0.0549, 0.0980, 0.2078);
+    glVertex3f(-275, -50, -219);
+    glVertex3f(-275, -40, -219);
+    glVertex3f(275, -40, -219);
+    glVertex3f(275, -50, -219);
+    glEnd();
+    glBegin(GL_QUADS);
+    glColor3f(0.0549, 0.0980, 0.2078);
+    glVertex3f(-5, 165, -219);
+    glVertex3f(-5, -165, -219);
+    glVertex3f(5, -165, -219);
+    glVertex3f(5, 165, -219);
+    glEnd();
+    // 窗外
+    glPushMatrix();
+    glEnable(GL_TEXTURE_2D);
+    glBindTexture(GL_TEXTURE_2D, texName[1]); // outside
+    glMaterialfv(GL_FRONT, GL_AMBIENT, matWhite);
+    glMaterialfv(GL_FRONT, GL_DIFFUSE, matWhite);
+    glMaterialfv(GL_FRONT, GL_SPECULAR, matWhite);
+    glMaterialfv(GL_FRONT, GL_SHININESS, matShininess);
+    glMaterialfv(GL_FRONT, GL_EMISSION, matBlack);
+    glBegin(GL_POLYGON);
+    glColor3f(0.75f, 0.75f, 0.75f);
+    glTexCoord2f(0, 1);
+    glVertex3f(-265, 155, -219);
+    glTexCoord2f(0, 0);
+    glVertex3f(-265, -155, -219);
+    glTexCoord2f(1, 0);
+    glVertex3f(265, -155, -219);
+    glTexCoord2f(1, 1);
+    glVertex3f(265, 155, -219);
+    glEnd();
+    glDisable(GL_TEXTURE_2D);
+
 
     // 完成窗台绘制
     glPopMatrix();
