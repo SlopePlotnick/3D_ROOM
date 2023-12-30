@@ -593,7 +593,7 @@ void display(void) // Here's Where We Do All The Drawing
     glTranslatef(220, 165.f, 40.f);
     // 空调
     glPushMatrix();
-    glTranslatef(-270, 25, 0);
+    glTranslatef(-265, 25, 0);
     glScalef( 2, 2, 2);
     if (air_open){// 开空调
         glPushMatrix();
@@ -848,18 +848,18 @@ void keyboard(unsigned char key, int x, int y) // Handle the keyboard events her
                 glEnable(GL_LIGHT1);
             }
             break;
-        case 'f':
+        case 'f': // 空调控制
             air_open = !air_open;
             break;
-        case 'g':
+        case 'g': // 电脑控制
             computer_on = !computer_on;
             break;
-        case 'h':
+        case 'h': // 逆时针旋转
             if(angle >= 360)
                 angle = 0;
             angle++;
             break;
-        case 'j':
+        case 'j': // 顺时针旋转
             if(angle <= -360)
                 angle = 0;
             angle--;
