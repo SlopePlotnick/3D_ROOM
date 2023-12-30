@@ -24,8 +24,8 @@ int option = 0, i = 0;
 bool enableLight = 1;
 
 /* Do  animation 动画*/
-GLfloat angle = 0,tea_p = -40 , tea_face = 100 , donut_size = 3 , seat_pos = -60, board_pos = -50;
-GLboolean deskLight = false, air_open = false;
+GLfloat angle = 0,tea_p = -40 , tea_face = 100 , donut_size = 3 , seat_pos = -60, board_pos = -50, curtain_pos = 0;
+GLboolean deskLight = false, air_open = false, enable_light = false;
 
 clock_t clock_agl1 = 0;// 分针
 clock_t clock_agl2 = 90;// 时针
@@ -89,8 +89,12 @@ void init(void) // All Setup For OpenGL Goes Here
     // 读取地板纹理
     char filename1[] = "../src/floor.bmp";
     loadTexture(filename1, texName[0]);
-    char filename2[] = "../src/outside.bmp";
+    // 窗外纹理
+    char filename2[] = "../src/out.bmp";
     loadTexture(filename2, texName[1]);
+    // 墙纸纹理
+    char filename3[] = "../src/star.bmp";
+    loadTexture(filename3, texName[2]);
 //    char filename3[] = "../src/wall.bmp";
 //    loadTexture(filename3, texName[2]);
 
@@ -159,18 +163,21 @@ void display(void) // Here's Where We Do All The Drawing
     GLfloat matglass[] = {0.341, 0.98, 1, 0.3};
     GLfloat matcl[] = {0.96, 0.83, 0.851, 0.5};
 
-
     glMaterialfv(GL_FRONT, GL_AMBIENT, no_mat);
     glMaterialfv(GL_FRONT, GL_DIFFUSE, mat_diffuse);
     glMaterialfv(GL_FRONT, GL_SPECULAR, mat_specular);
     glMaterialfv(GL_FRONT, GL_SHININESS, high_shininess);
     glMaterialfv(GL_FRONT, GL_EMISSION, no_mat);
 
-    // TODO:
     // 此处是核心绘制板块
 
-    // 墙面绘制
+    // 墙面绘制 有时间可以做墙纸
     // 后墙
+    glMaterialfv(GL_FRONT, GL_AMBIENT, matWhite);
+    glMaterialfv(GL_FRONT, GL_DIFFUSE, matWhite);
+    glMaterialfv(GL_FRONT, GL_SPECULAR, matWhite);
+    glMaterialfv(GL_FRONT, GL_SHININESS, matShininess);
+    glMaterialfv(GL_FRONT, GL_EMISSION, matBlack);
     glBegin(GL_QUADS);
     glColor3f(0.6f, 0.4f, 0.7f);
     glVertex3f(-275.0f, 165.0f, -220.0f);
@@ -179,6 +186,11 @@ void display(void) // Here's Where We Do All The Drawing
     glVertex3f(275.0f, 165.0f, -220.0f);
     glEnd();
     // 天花板
+    glMaterialfv(GL_FRONT, GL_AMBIENT, matWhite);
+    glMaterialfv(GL_FRONT, GL_DIFFUSE, matWhite);
+    glMaterialfv(GL_FRONT, GL_SPECULAR, matWhite);
+    glMaterialfv(GL_FRONT, GL_SHININESS, matShininess);
+    glMaterialfv(GL_FRONT, GL_EMISSION, matBlack);
     glBegin(GL_QUADS);
     glColor3f(0.695, 0.703, 0.699);
     glVertex3f(-275.0f, 165.0f, -220.0f);
@@ -187,20 +199,14 @@ void display(void) // Here's Where We Do All The Drawing
     glVertex3f(275.0f, 165.0f, -220.0f);
     glEnd();
     // 地板
-    glEnable(GL_TEXTURE_2D);
-    glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_REPLACE);//纹理和材质混合方式
-    glBindTexture(GL_TEXTURE_2D, texName[0]);//floor
-    glBegin(GL_QUADS);
-    glTexCoord2f(0.0, 0.0);
+    glBegin(GL_POLYGON);
+    glColor3f(0.4902, 0.3765, 0.2588);
     glVertex3f(-275.0f, -165.f, -220.f);
-    glTexCoord2f(0.0, 5.0);
     glVertex3f(-275.0f, -165.f, 220.f);
-    glTexCoord2f(5.0, 5.0);
     glVertex3f(275.0f, -165.f, 220.f);
-    glTexCoord2f(5.0, 0.0);
     glVertex3f(275.0f, -165.f, -220.f);
     glEnd();
-    glDisable(GL_TEXTURE_2D);
+    //此处还可以接着绘制线条增加美观程度
     // 右墙
     glBegin(GL_QUADS);
     glColor3f(0.6000, 0.7804, 0.9059);
@@ -227,17 +233,21 @@ void display(void) // Here's Where We Do All The Drawing
     glMaterialfv(GL_FRONT_AND_BACK, GL_EMISSION, matBlack); // 自发光
     // 垫台
     glPushMatrix();
+    glBegin(GL_QUADS);
     glColor3f(0.695, 0.703, 0.699);
-    glTranslatef(-0, -40, 5);
-    glScalef(400, 10, 5);
-    glutSolidCube(1);
+    glVertex3f(-275, -50, -219);
+    glVertex3f(-275, -60, -219);
+    glVertex3f(275, -60, -219);
+    glVertex3f(275, -50, -219);
     glPopMatrix();
     // 垫台下方
     glPushMatrix();
+    glBegin(GL_QUADS);
     glColor3f(0.2431, 0.2431, 0.2706);
-    glTranslatef(-0, -80, 5);
-    glScalef(400, 90, 5);
-    glutSolidCube(1);
+    glVertex3f(-275, -60, -219);
+    glVertex3f(-275, -165, -219);
+    glVertex3f(275, -165, -219);
+    glVertex3f(275, -60, -219);
     glPopMatrix();
     // 窗框
     glBegin(GL_QUADS);
@@ -271,8 +281,8 @@ void display(void) // Here's Where We Do All The Drawing
     glBegin(GL_QUADS);
     glColor3f(0.0549, 0.0980, 0.2078);
     glVertex3f(-5, 165, -219);
-    glVertex3f(-5, -165, -219);
-    glVertex3f(5, -165, -219);
+    glVertex3f(-5, -50, -219);
+    glVertex3f(5, -50, -219);
     glVertex3f(5, 165, -219);
     glEnd();
     // 窗外
@@ -289,17 +299,41 @@ void display(void) // Here's Where We Do All The Drawing
     glTexCoord2f(0, 1);
     glVertex3f(-265, 155, -219);
     glTexCoord2f(0, 0);
-    glVertex3f(-265, -155, -219);
+    glVertex3f(-265, -50, -219);
     glTexCoord2f(1, 0);
-    glVertex3f(265, -155, -219);
+    glVertex3f(265, -50, -219);
     glTexCoord2f(1, 1);
     glVertex3f(265, 155, -219);
     glEnd();
     glDisable(GL_TEXTURE_2D);
-
-
+    // 窗帘
+    glPushMatrix();
+    glColor3f(0.7529, 0.6941, 0.5804);
+    glBegin(GL_QUADS);
+    glVertex3f(-275, 165, -218);
+    glVertex3f(-275, -165, -218);
+    glVertex3f(0 - curtain_pos, -165, -218);
+    glVertex3f(0 - curtain_pos, 165, -218);
+    glEnd();
+    glBegin(GL_QUADS);
+    glVertex3f(275, 165, -218);
+    glVertex3f(275, -165, -218);
+    glVertex3f(0 + curtain_pos, -165, -218);
+    glVertex3f(0 + curtain_pos, 165, -218);
+    glEnd();
+    glPopMatrix();
     // 完成窗台绘制
     glPopMatrix();
+
+    // 绘制灯泡
+    glPushMatrix();
+    glMaterialfv(GL_FRONT, GL_EMISSION, light0_mat1);
+    glColor3f(0.8f, 0.8f, 0.8f);
+    glTranslatef(0, 155, 0);
+    glScalef(100, 10, 100);
+    glutSolidCube(1);
+    glPopMatrix();
+    glMaterialfv(GL_FRONT, GL_EMISSION, no_mat);
 
     // 完成所有绘制
     glPopMatrix();
@@ -327,13 +361,91 @@ void keyboard(unsigned char key, int x, int y) // Handle the keyboard events her
 {
     switch (key)
     {
-        case'\033'://press 'esc' to quit
+        case '\033': //press 'esc' to quit
             exit(0);
             break;
-
-            // TODO:
-            // Add keyboard control here
-
+        case '1': // 增强灯光
+            if (enableLight)
+                if(light0_mat1[0] >= 0){
+                    for (i=0; i<=3 ; i++){
+                        light0_mat1[i] -= 0.1;
+                        light0_diff[i] -= 0.1;
+                    }
+                    glLightfv(GL_LIGHT1, GL_AMBIENT, light0_mat1);
+                    glLightfv(GL_LIGHT1, GL_DIFFUSE, light0_diff);
+                    glEnable(GL_LIGHT1);
+                }
+            break;
+        case '2': // 减弱灯光
+            if (enableLight)
+                if(light0_mat1[0] <= 1){
+                    for (i=0; i<=3 ; i++){
+                        light0_mat1[i] += 0.1;
+                        light0_diff[i] += 0.1;
+                    }
+                    glLightfv(GL_LIGHT1, GL_AMBIENT, light0_mat1);
+                    glLightfv(GL_LIGHT1, GL_DIFFUSE, light0_diff);
+                    glEnable(GL_LIGHT1);
+                }
+            break;
+        case '3':
+            if (curtain_pos <= 200)
+            {
+                curtain_pos += 10;
+                if (enableLight)
+                    if (light0_mat1[0] >= 0)
+                    {
+                        for (i = 0; i <= 3; i++)
+                        {
+                            light0_mat1[i] += 0.1;
+                            light0_diff[i] += 0.1;
+                            light_specular[i] += 0.1;
+                            // printf("2 %d\n", aCeilingLight);
+                        }
+                    }
+            }
+            break;
+        case '4':
+            if (curtain_pos >= 0)
+            {
+                curtain_pos -= 10;
+                if (enableLight)
+                    if (light0_mat1[0] >= 0)
+                    {
+                        for (i = 0; i <= 3; i++)
+                        {
+                            light0_mat1[i] -= 0.1;
+                            light0_diff[i] -= 0.1;
+                            light_specular[i] -= 0.1;
+                            // printf("2 %d\n", aCeilingLight);
+                        }
+                    }
+            }
+            break;
+        case 's': // 开关灯光
+            if(enableLight)
+            {
+                enableLight = false;
+                for (i=0; i<=3 ; i++){
+                    light0_mat1[i] = 0.0;
+                }
+                glLightfv(GL_LIGHT1, GL_AMBIENT, light0_mat1);
+                glDisable(GL_LIGHT1);
+                option = 1;
+            }
+            else
+            {
+                enableLight = true;
+                for (i=0; i<=3 ; i++){
+                    light0_diff[i] = 1.0;
+                    light0_mat1[i] = 1.0;
+                }
+                glLightfv(GL_LIGHT1, GL_AMBIENT, light0_mat1);
+                glLightfv(GL_LIGHT1, GL_DIFFUSE, light0_diff);
+                glEnable(GL_LIGHT1);
+                option = 1;
+            }
+            break;
     }
 }
 
