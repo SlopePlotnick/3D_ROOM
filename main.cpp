@@ -199,30 +199,69 @@ void display(void) // Here's Where We Do All The Drawing
     glVertex3f(275.0f, 165.0f, -220.0f);
     glEnd();
     // 地板
+    glPushMatrix();
+    glEnable(GL_TEXTURE_2D);
+    glBindTexture(GL_TEXTURE_2D, texName[0]); // floor
+    glMaterialfv(GL_FRONT, GL_AMBIENT, matWhite);
+    glMaterialfv(GL_FRONT, GL_DIFFUSE, matWhite);
+    glMaterialfv(GL_FRONT, GL_SPECULAR, matWhite);
+    glMaterialfv(GL_FRONT, GL_SHININESS, matShininess);
+    glMaterialfv(GL_FRONT, GL_EMISSION, matBlack);
     glBegin(GL_POLYGON);
-    glColor3f(0.4902, 0.3765, 0.2588);
+    glTexCoord2f(0.0, 0.0);
     glVertex3f(-275.0f, -165.f, -220.f);
+    glTexCoord2f(0.0, 5.0);
     glVertex3f(-275.0f, -165.f, 220.f);
+    glTexCoord2f(5.0, 5.0);
     glVertex3f(275.0f, -165.f, 220.f);
+    glTexCoord2f(5.0, 0.0);
     glVertex3f(275.0f, -165.f, -220.f);
     glEnd();
+    glDisable(GL_TEXTURE_2D);
+    glPopMatrix();
     //此处还可以接着绘制线条增加美观程度
     // 右墙
+    glPushMatrix();
+    glEnable(GL_TEXTURE_2D);
+    glBindTexture(GL_TEXTURE_2D, texName[2]); // wall
+    glMaterialfv(GL_FRONT, GL_AMBIENT, matWhite);
+    glMaterialfv(GL_FRONT, GL_DIFFUSE, matWhite);
+    glMaterialfv(GL_FRONT, GL_SPECULAR, matWhite);
+    glMaterialfv(GL_FRONT, GL_SHININESS, matShininess);
+    glMaterialfv(GL_FRONT, GL_EMISSION, matBlack);
     glBegin(GL_QUADS);
-    glColor3f(0.6000, 0.7804, 0.9059);
+    glTexCoord2f(0, 1);
     glVertex3f(275.0f, 165.0f, -220.0f);
+    glTexCoord2f(0, 0);
     glVertex3f(275.0f, -165.0f, -220.0f);
+    glTexCoord2f(1, 0);
     glVertex3f(275.0f, -165.0f, 220.0f);
+    glTexCoord2f(1, 1);
     glVertex3f(275.0f, 165.0f, 220.0f);
     glEnd();
+    glDisable(GL_TEXTURE_2D);
+    glPopMatrix();
     // 左墙
+    glPushMatrix();
+    glEnable(GL_TEXTURE_2D);
+    glBindTexture(GL_TEXTURE_2D, texName[2]); // wall
+    glMaterialfv(GL_FRONT, GL_AMBIENT, matWhite);
+    glMaterialfv(GL_FRONT, GL_DIFFUSE, matWhite);
+    glMaterialfv(GL_FRONT, GL_SPECULAR, matWhite);
+    glMaterialfv(GL_FRONT, GL_SHININESS, matShininess);
+    glMaterialfv(GL_FRONT, GL_EMISSION, matBlack);
     glBegin(GL_QUADS);
-    glColor3f(0.6000, 0.7804, 0.9059);
+    glTexCoord2f(0, 1);
     glVertex3f(-275.0f, 165.0f, -220.0f);
+    glTexCoord2f(0, 0);
     glVertex3f(-275.0f, -165.0f, -220.0f);
+    glTexCoord2f(1, 0);
     glVertex3f(-275.0f, -165.0f, 220.0f);
+    glTexCoord2f(1, 1);
     glVertex3f(-275.0f, 165.0f, 220.0f);
     glEnd();
+    glDisable(GL_TEXTURE_2D);
+    glPopMatrix();
 
     // 窗台绘制
     glPushMatrix();
