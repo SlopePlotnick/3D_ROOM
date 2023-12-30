@@ -24,7 +24,7 @@ int option = 0, i = 0;
 bool enableLight = 1;
 
 /* Do  animation 动画*/
-GLfloat angle = 0,tea_p = -40 , tea_face = 100 , donut_size = 3 , seat_pos = -60, board_pos = -50, curtain_pos = 0;
+GLfloat angle = 0,tea_p = -40 , tea_face = 100 , donut_size = 3 , seat_pos = 80, board_pos = -50, curtain_pos = 0;
 GLboolean deskLight = false, air_open = false, enable_light = false;
 
 clock_t clock_agl1 = 0;// 分针
@@ -173,11 +173,6 @@ void display(void) // Here's Where We Do All The Drawing
 
     // 墙面绘制 有时间可以做墙纸
     // 后墙
-    glMaterialfv(GL_FRONT, GL_AMBIENT, matWhite);
-    glMaterialfv(GL_FRONT, GL_DIFFUSE, matWhite);
-    glMaterialfv(GL_FRONT, GL_SPECULAR, matWhite);
-    glMaterialfv(GL_FRONT, GL_SHININESS, matShininess);
-    glMaterialfv(GL_FRONT, GL_EMISSION, matBlack);
     glBegin(GL_QUADS);
     glColor3f(0.6f, 0.4f, 0.7f);
     glVertex3f(-275.0f, 165.0f, -220.0f);
@@ -186,11 +181,6 @@ void display(void) // Here's Where We Do All The Drawing
     glVertex3f(275.0f, 165.0f, -220.0f);
     glEnd();
     // 天花板
-    glMaterialfv(GL_FRONT, GL_AMBIENT, matWhite);
-    glMaterialfv(GL_FRONT, GL_DIFFUSE, matWhite);
-    glMaterialfv(GL_FRONT, GL_SPECULAR, matWhite);
-    glMaterialfv(GL_FRONT, GL_SHININESS, matShininess);
-    glMaterialfv(GL_FRONT, GL_EMISSION, matBlack);
     glBegin(GL_QUADS);
     glColor3f(0.695, 0.703, 0.699);
     glVertex3f(-275.0f, 165.0f, -220.0f);
@@ -265,13 +255,13 @@ void display(void) // Here's Where We Do All The Drawing
 
     // 窗台绘制
     glPushMatrix();
+    // 垫台
+    glPushMatrix();
     glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT, matsafe); // 环境光反射
     glMaterialfv(GL_FRONT_AND_BACK, GL_DIFFUSE, matsafe);
     glMaterialfv(GL_FRONT_AND_BACK, GL_SPECULAR, matWhite);
     glMaterialfv(GL_FRONT_AND_BACK, GL_SHININESS, matShininess);
     glMaterialfv(GL_FRONT_AND_BACK, GL_EMISSION, matBlack); // 自发光
-    // 垫台
-    glPushMatrix();
     glBegin(GL_QUADS);
     glColor3f(0.695, 0.703, 0.699);
     glVertex3f(-275, -50, -219);
@@ -281,6 +271,11 @@ void display(void) // Here's Where We Do All The Drawing
     glPopMatrix();
     // 垫台下方
     glPushMatrix();
+    glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT, matsafe); // 环境光反射
+    glMaterialfv(GL_FRONT_AND_BACK, GL_DIFFUSE, matsafe);
+    glMaterialfv(GL_FRONT_AND_BACK, GL_SPECULAR, matWhite);
+    glMaterialfv(GL_FRONT_AND_BACK, GL_SHININESS, matShininess);
+    glMaterialfv(GL_FRONT_AND_BACK, GL_EMISSION, matBlack); // 自发光
     glBegin(GL_QUADS);
     glColor3f(0.2431, 0.2431, 0.2706);
     glVertex3f(-275, -60, -219);
@@ -290,6 +285,11 @@ void display(void) // Here's Where We Do All The Drawing
     glPopMatrix();
     // 窗框
     glBegin(GL_QUADS);
+    glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT, matsafe); // 环境光反射
+    glMaterialfv(GL_FRONT_AND_BACK, GL_DIFFUSE, matsafe);
+    glMaterialfv(GL_FRONT_AND_BACK, GL_SPECULAR, matWhite);
+    glMaterialfv(GL_FRONT_AND_BACK, GL_SHININESS, matShininess);
+    glMaterialfv(GL_FRONT_AND_BACK, GL_EMISSION, matBlack); // 自发光
     glColor3f(0.0549, 0.0980, 0.2078);
     glVertex3f(-275, 165, -219);
     glVertex3f(-275, -50, -219);
@@ -347,6 +347,11 @@ void display(void) // Here's Where We Do All The Drawing
     glDisable(GL_TEXTURE_2D);
     // 窗帘
     glPushMatrix();
+    glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT, matsafe); // 环境光反射
+    glMaterialfv(GL_FRONT_AND_BACK, GL_DIFFUSE, matsafe);
+    glMaterialfv(GL_FRONT_AND_BACK, GL_SPECULAR, matWhite);
+    glMaterialfv(GL_FRONT_AND_BACK, GL_SHININESS, matShininess);
+    glMaterialfv(GL_FRONT_AND_BACK, GL_EMISSION, matBlack); // 自发光
     glColor3f(0.7529, 0.6941, 0.5804);
     glBegin(GL_QUADS);
     glVertex3f(-275, 165, -218);
@@ -373,6 +378,93 @@ void display(void) // Here's Where We Do All The Drawing
     glutSolidCube(1);
     glPopMatrix();
     glMaterialfv(GL_FRONT, GL_EMISSION, no_mat);
+
+    // 右侧绘制
+    glPushMatrix();
+    // 桌面
+    glPushMatrix();
+    glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT, matsafe); // 环境光反射
+    glMaterialfv(GL_FRONT_AND_BACK, GL_DIFFUSE, matsafe);
+    glMaterialfv(GL_FRONT_AND_BACK, GL_SPECULAR, matWhite);
+    glMaterialfv(GL_FRONT_AND_BACK, GL_SHININESS, matShininess);
+    glMaterialfv(GL_FRONT_AND_BACK, GL_EMISSION, matBlack); // 自发光
+    glColor3f(1.0, 1.0, 1.0);
+    glTranslatef(200, -30, 20);
+    glScalef(100, 15, 200);
+    glutSolidCube(1);
+    glPopMatrix();
+    // 椅子
+    glTranslatef(seat_pos, -100.f, 150.f);
+    glPushMatrix();
+    glColor3f(0.0f, 0.0f, 0.0f);
+    glTranslatef(0.f,0.f,0.f);
+    glRotatef(-90, 1.f, 0.f, 0.f);
+    gluCylinder(quadobj, 2.f, 2.f, 77, 20, 20);
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(0.f,0.f,80.f);
+    glRotatef(-90, 1.f, 0.f, 0.f);
+    gluCylinder(quadobj, 2.f, 2.f, 77, 20, 20);
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(30.f,0.f,0.f);
+    glRotatef(-90, 1.f, 0.f, 0.f);
+    gluCylinder(quadobj, 2.f, 2.f, 38, 20, 20);
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(30.f,0.f,80.f);
+    glRotatef(-90, 1.f, 0.f, 0.f);
+    gluCylinder(quadobj, 2.f, 2.f, 38, 20, 20);
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(0.f,20.f,0.f);
+    glRotatef(90, 0.f, 1.f, 0.f);
+    gluCylinder(quadobj, 2.f, 2.f, 30, 20, 20);
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(0.f,20.f,80.f);
+    glRotatef(90, 0.f, 1.f, 0.f);
+    gluCylinder(quadobj, 2.f, 2.f, 30, 20, 20);
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(0.f,60.f,0.f);
+    glRotatef(0, 1.f, 0.f, 0.f);
+    gluCylinder(quadobj, 2.f, 2.f, 80, 20, 20);
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(30.f,37.f,80.f);
+    glRotatef(-90, 0.f, 1.f, 0.f);
+    gluCylinder(quadobj, 3.f, 3.f, 30, 20, 20);
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(30.f,37.f,0.f);
+    glRotatef(-90, 0.f, 1.f, 0.f);
+    gluCylinder(quadobj, 3.f, 3.f, 30, 20, 20);
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(30.f,37.f,-2.f);
+    glRotatef(0, 1.f, 0.f, 0.f);
+    gluCylinder(quadobj, 3.f, 3.f, 84, 20, 20);
+    glPopMatrix();
+    //seat pan
+    glPushMatrix();
+    glTranslatef(15.f, 37.f, 40.f);
+    glScalef(30.f, 5.0f, 82.f);
+    glutSolidCube(1.f);
+    glPopMatrix();
+    glTranslatef(-seat_pos, 100.f, -98.f);
+
+    // 完成右侧绘制
+    glPopMatrix();
 
     // 完成所有绘制
     glPopMatrix();
@@ -427,7 +519,7 @@ void keyboard(unsigned char key, int x, int y) // Handle the keyboard events her
                     glEnable(GL_LIGHT1);
                 }
             break;
-        case '3':
+        case '3': // 打开窗帘
             if (curtain_pos <= 200)
             {
                 curtain_pos += 10;
@@ -444,7 +536,7 @@ void keyboard(unsigned char key, int x, int y) // Handle the keyboard events her
                     }
             }
             break;
-        case '4':
+        case '4': // 关闭窗帘
             if (curtain_pos >= 0)
             {
                 curtain_pos -= 10;
@@ -460,6 +552,14 @@ void keyboard(unsigned char key, int x, int y) // Handle the keyboard events her
                         }
                     }
             }
+            break;
+        case '5':
+            if (seat_pos <= 80)
+                seat_pos++;
+            break;
+        case '6':
+            if (seat_pos >= 60)
+                seat_pos--;
             break;
         case 's': // 开关灯光
             if(enableLight)
@@ -502,9 +602,9 @@ int main(int argc, char** argv)
     glutInitDisplayMode(GLUT_RGBA|GLUT_DOUBLE|GLUT_DEPTH);
 
     /*Create a window with title specified */
-    glutCreateWindow("072110112 冉中益");
     glutInitWindowSize(800, 600);
     glutInitWindowPosition(100, 100);
+    glutCreateWindow("072110112 冉中益");
 
     init();	/*not GLUT call, initialize several parameters */
 
