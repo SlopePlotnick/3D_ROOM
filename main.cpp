@@ -4,8 +4,8 @@
 *****************************************************************************/
 /*****************************************************************************
 		Student Information
-		Student ID:
-		Student Name:
+		Student ID:072110112
+		Student Name:冉中益
 *****************************************************************************/
 
 #include <cstdlib>
@@ -115,8 +115,8 @@ void init(void) // All Setup For OpenGL Goes Here
     glLightfv(GL_LIGHT1, GL_DIFFUSE, light0_diff);// 散色光 漫射光Diffuse
     glLightfv(GL_LIGHT1, GL_SPECULAR, light_specular);// 镜面反射光
 
-    glLightf(GL_LIGHT1, GL_SPOT_CUTOFF, 45);//设置聚光灯的角度
-    glLightfv(GL_LIGHT1, GL_SPOT_DIRECTION, spot_position);//指定聚光灯的方向
+//    glLightf(GL_LIGHT1, GL_SPOT_CUTOFF, 45);//设置聚光灯的角度
+//    glLightfv(GL_LIGHT1, GL_SPOT_DIRECTION, spot_position);//指定聚光灯的方向
 
     // 材质和颜色
     glMaterialfv(GL_FRONT, GL_AMBIENT, ambientMat);
@@ -863,6 +863,7 @@ void keyboard(unsigned char key, int x, int y) // Handle the keyboard events her
             if(angle <= -360)
                 angle = 0;
             angle--;
+            break;
     }
 }
 
