@@ -53,10 +53,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/3D_ROOM
+CMAKE_SOURCE_DIR = /Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/作业1/3D_ROOM
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/3D_ROOM/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/作业1/3D_ROOM/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/3D_ROOM.dir/depend.make
@@ -70,32 +70,32 @@ include CMakeFiles/3D_ROOM.dir/progress.make
 include CMakeFiles/3D_ROOM.dir/flags.make
 
 CMakeFiles/3D_ROOM.dir/lib/glad.c.o: CMakeFiles/3D_ROOM.dir/flags.make
-CMakeFiles/3D_ROOM.dir/lib/glad.c.o: /Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/3D_ROOM/lib/glad.c
+CMakeFiles/3D_ROOM.dir/lib/glad.c.o: /Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/作业1/3D_ROOM/lib/glad.c
 CMakeFiles/3D_ROOM.dir/lib/glad.c.o: CMakeFiles/3D_ROOM.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/3D_ROOM/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/3D_ROOM.dir/lib/glad.c.o"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/3D_ROOM.dir/lib/glad.c.o -MF CMakeFiles/3D_ROOM.dir/lib/glad.c.o.d -o CMakeFiles/3D_ROOM.dir/lib/glad.c.o -c /Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/3D_ROOM/lib/glad.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/作业1/3D_ROOM/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/3D_ROOM.dir/lib/glad.c.o"
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/3D_ROOM.dir/lib/glad.c.o -MF CMakeFiles/3D_ROOM.dir/lib/glad.c.o.d -o CMakeFiles/3D_ROOM.dir/lib/glad.c.o -c /Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/作业1/3D_ROOM/lib/glad.c
 
 CMakeFiles/3D_ROOM.dir/lib/glad.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/3D_ROOM.dir/lib/glad.c.i"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/3D_ROOM/lib/glad.c > CMakeFiles/3D_ROOM.dir/lib/glad.c.i
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/作业1/3D_ROOM/lib/glad.c > CMakeFiles/3D_ROOM.dir/lib/glad.c.i
 
 CMakeFiles/3D_ROOM.dir/lib/glad.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/3D_ROOM.dir/lib/glad.c.s"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/3D_ROOM/lib/glad.c -o CMakeFiles/3D_ROOM.dir/lib/glad.c.s
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/作业1/3D_ROOM/lib/glad.c -o CMakeFiles/3D_ROOM.dir/lib/glad.c.s
 
 CMakeFiles/3D_ROOM.dir/main.cpp.o: CMakeFiles/3D_ROOM.dir/flags.make
-CMakeFiles/3D_ROOM.dir/main.cpp.o: /Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/3D_ROOM/main.cpp
+CMakeFiles/3D_ROOM.dir/main.cpp.o: /Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/作业1/3D_ROOM/main.cpp
 CMakeFiles/3D_ROOM.dir/main.cpp.o: CMakeFiles/3D_ROOM.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/3D_ROOM/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/3D_ROOM.dir/main.cpp.o"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/3D_ROOM.dir/main.cpp.o -MF CMakeFiles/3D_ROOM.dir/main.cpp.o.d -o CMakeFiles/3D_ROOM.dir/main.cpp.o -c /Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/3D_ROOM/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/作业1/3D_ROOM/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/3D_ROOM.dir/main.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/3D_ROOM.dir/main.cpp.o -MF CMakeFiles/3D_ROOM.dir/main.cpp.o.d -o CMakeFiles/3D_ROOM.dir/main.cpp.o -c /Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/作业1/3D_ROOM/main.cpp
 
 CMakeFiles/3D_ROOM.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/3D_ROOM.dir/main.cpp.i"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/3D_ROOM/main.cpp > CMakeFiles/3D_ROOM.dir/main.cpp.i
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/作业1/3D_ROOM/main.cpp > CMakeFiles/3D_ROOM.dir/main.cpp.i
 
 CMakeFiles/3D_ROOM.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/3D_ROOM.dir/main.cpp.s"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/3D_ROOM/main.cpp -o CMakeFiles/3D_ROOM.dir/main.cpp.s
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/作业1/3D_ROOM/main.cpp -o CMakeFiles/3D_ROOM.dir/main.cpp.s
 
 # Object files for target 3D_ROOM
 3D_ROOM_OBJECTS = \
@@ -111,7 +111,7 @@ CMakeFiles/3D_ROOM.dir/main.cpp.s: cmake_force
 3D_ROOM: /opt/homebrew/Cellar/glew/2.2.0_1/lib/libGLEW.2.2.dylib
 3D_ROOM: /opt/homebrew/Cellar/glfw/3.3.9/lib/libglfw.3.dylib
 3D_ROOM: CMakeFiles/3D_ROOM.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/3D_ROOM/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable 3D_ROOM"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/作业1/3D_ROOM/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable 3D_ROOM"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/3D_ROOM.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -123,6 +123,6 @@ CMakeFiles/3D_ROOM.dir/clean:
 .PHONY : CMakeFiles/3D_ROOM.dir/clean
 
 CMakeFiles/3D_ROOM.dir/depend:
-	cd /Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/3D_ROOM/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/3D_ROOM /Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/3D_ROOM /Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/3D_ROOM/cmake-build-debug /Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/3D_ROOM/cmake-build-debug /Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/3D_ROOM/cmake-build-debug/CMakeFiles/3D_ROOM.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/作业1/3D_ROOM/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/作业1/3D_ROOM /Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/作业1/3D_ROOM /Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/作业1/3D_ROOM/cmake-build-debug /Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/作业1/3D_ROOM/cmake-build-debug /Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/作业1/3D_ROOM/cmake-build-debug/CMakeFiles/3D_ROOM.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/3D_ROOM.dir/depend
 

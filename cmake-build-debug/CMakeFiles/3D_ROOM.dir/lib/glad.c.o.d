@@ -1,5 +1,5 @@
 CMakeFiles/3D_ROOM.dir/lib/glad.c.o: \
-  /Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/3D_ROOM/lib/glad.c \
+  /Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/作业1/3D_ROOM/lib/glad.c \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/stdio.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/_stdio.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/sys/cdefs.h \

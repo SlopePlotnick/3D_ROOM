@@ -735,7 +735,7 @@ void reshape(int w, int h) // Resize the GL Window. w=width, h=height
     glViewport(0, 0, (GLsizei) w, (GLsizei) h);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    glFrustum(-100., 100., -100., 100., 165., 790.);
+    glFrustum(-100., 100., -100., 100., 165., 1000.);
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
 }

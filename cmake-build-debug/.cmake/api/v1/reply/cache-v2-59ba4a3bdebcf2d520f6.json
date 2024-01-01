@@ -11,7 +11,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/plotnickslope/Desktop/\u5b66\u4e60\u8d44\u6599/\u8ba1\u7b97\u673a\u56fe\u5f62\u5b66/\u4f5c\u4e1a/3D_ROOM/cmake-build-debug"
+			"value" : "/Users/plotnickslope/Desktop/\u5b66\u4e60\u8d44\u6599/\u8ba1\u7b97\u673a\u56fe\u5f62\u5b66/\u4f5c\u4e1a/\u4f5c\u4e1a1/3D_ROOM/cmake-build-debug"
 		},
 		{
 			"name" : "3D_ROOM_IS_TOP_LEVEL",
@@ -35,7 +35,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/plotnickslope/Desktop/\u5b66\u4e60\u8d44\u6599/\u8ba1\u7b97\u673a\u56fe\u5f62\u5b66/\u4f5c\u4e1a/3D_ROOM"
+			"value" : "/Users/plotnickslope/Desktop/\u5b66\u4e60\u8d44\u6599/\u8ba1\u7b97\u673a\u56fe\u5f62\u5b66/\u4f5c\u4e1a/\u4f5c\u4e1a1/3D_ROOM"
 		},
 		{
 			"name" : "CMAKE_ADDR2LINE",
@@ -91,7 +91,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/Users/plotnickslope/Desktop/\u5b66\u4e60\u8d44\u6599/\u8ba1\u7b97\u673a\u56fe\u5f62\u5b66/\u4f5c\u4e1a/3D_ROOM/cmake-build-debug"
+			"value" : "/Users/plotnickslope/Desktop/\u5b66\u4e60\u8d44\u6599/\u8ba1\u7b97\u673a\u56fe\u5f62\u5b66/\u4f5c\u4e1a/\u4f5c\u4e1a1/3D_ROOM/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -223,10 +223,10 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "No help, variable specified on the command line."
+					"value" : "CXX compiler"
 				}
 			],
-			"type" : "UNINITIALIZED",
+			"type" : "STRING",
 			"value" : "/usr/bin/clang++"
 		},
 		{
@@ -319,10 +319,10 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "No help, variable specified on the command line."
+					"value" : "C compiler"
 				}
 			],
-			"type" : "UNINITIALIZED",
+			"type" : "STRING",
 			"value" : "/usr/bin/clang"
 		},
 		{
@@ -599,7 +599,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/plotnickslope/Desktop/\u5b66\u4e60\u8d44\u6599/\u8ba1\u7b97\u673a\u56fe\u5f62\u5b66/\u4f5c\u4e1a/3D_ROOM/cmake-build-debug/CMakeFiles/pkgRedirects"
+			"value" : "/Users/plotnickslope/Desktop/\u5b66\u4e60\u8d44\u6599/\u8ba1\u7b97\u673a\u56fe\u5f62\u5b66/\u4f5c\u4e1a/\u4f5c\u4e1a1/3D_ROOM/cmake-build-debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -659,7 +659,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/Users/plotnickslope/Desktop/\u5b66\u4e60\u8d44\u6599/\u8ba1\u7b97\u673a\u56fe\u5f62\u5b66/\u4f5c\u4e1a/3D_ROOM"
+			"value" : "/Users/plotnickslope/Desktop/\u5b66\u4e60\u8d44\u6599/\u8ba1\u7b97\u673a\u56fe\u5f62\u5b66/\u4f5c\u4e1a/\u4f5c\u4e1a1/3D_ROOM"
 		},
 		{
 			"name" : "CMAKE_INSTALL_NAME_TOOL",

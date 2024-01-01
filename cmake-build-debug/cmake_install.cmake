@@ -1,4 +1,4 @@
-# Install script for directory: /Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/3D_ROOM
+# Install script for directory: /Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/作业1/3D_ROOM
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/3D_ROOM/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/作业1/3D_ROOM/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

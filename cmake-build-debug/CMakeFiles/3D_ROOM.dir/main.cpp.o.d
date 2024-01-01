@@ -1,5 +1,5 @@
 CMakeFiles/3D_ROOM.dir/main.cpp.o: \
-  /Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/3D_ROOM/main.cpp \
+  /Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/作业1/3D_ROOM/main.cpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/cstdlib \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__assert \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__config \

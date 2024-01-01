@@ -8,18 +8,18 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/3D_ROOM/cmake-build-debug"/>
+				<Option working_dir="/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/作业1/3D_ROOM/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/opt/homebrew/Cellar/make/4.4.1/bin/gmake -j8 -f &quot;/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/3D_ROOM/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/opt/homebrew/Cellar/make/4.4.1/bin/gmake -j8 -f &quot;/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/3D_ROOM/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/opt/homebrew/Cellar/make/4.4.1/bin/gmake -j8 -f &quot;/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/3D_ROOM/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/opt/homebrew/Cellar/make/4.4.1/bin/gmake -j8 -f &quot;/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/3D_ROOM/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/opt/homebrew/Cellar/make/4.4.1/bin/gmake -j8 -f &quot;/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/作业1/3D_ROOM/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/opt/homebrew/Cellar/make/4.4.1/bin/gmake -j8 -f &quot;/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/作业1/3D_ROOM/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/opt/homebrew/Cellar/make/4.4.1/bin/gmake -j8 -f &quot;/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/作业1/3D_ROOM/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/opt/homebrew/Cellar/make/4.4.1/bin/gmake -j8 -f &quot;/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/作业1/3D_ROOM/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="3D_ROOM">
-				<Option output="/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/3D_ROOM/cmake-build-debug/3D_ROOM" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/3D_ROOM/cmake-build-debug"/>
+				<Option output="/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/作业1/3D_ROOM/cmake-build-debug/3D_ROOM" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/作业1/3D_ROOM/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -35,15 +35,15 @@
 					<Add directory="/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/opt/homebrew/Cellar/make/4.4.1/bin/gmake -j8 -f &quot;/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/3D_ROOM/cmake-build-debug/Makefile&quot;  VERBOSE=1 3D_ROOM"/>
-					<CompileFile command="/opt/homebrew/Cellar/make/4.4.1/bin/gmake -j8 -f &quot;/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/3D_ROOM/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/opt/homebrew/Cellar/make/4.4.1/bin/gmake -j8 -f &quot;/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/3D_ROOM/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/opt/homebrew/Cellar/make/4.4.1/bin/gmake -j8 -f &quot;/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/3D_ROOM/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/opt/homebrew/Cellar/make/4.4.1/bin/gmake -j8 -f &quot;/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/作业1/3D_ROOM/cmake-build-debug/Makefile&quot;  VERBOSE=1 3D_ROOM"/>
+					<CompileFile command="/opt/homebrew/Cellar/make/4.4.1/bin/gmake -j8 -f &quot;/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/作业1/3D_ROOM/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/opt/homebrew/Cellar/make/4.4.1/bin/gmake -j8 -f &quot;/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/作业1/3D_ROOM/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/opt/homebrew/Cellar/make/4.4.1/bin/gmake -j8 -f &quot;/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/作业1/3D_ROOM/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="3D_ROOM/fast">
-				<Option output="/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/3D_ROOM/cmake-build-debug/3D_ROOM" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/3D_ROOM/cmake-build-debug"/>
+				<Option output="/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/作业1/3D_ROOM/cmake-build-debug/3D_ROOM" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/作业1/3D_ROOM/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -59,40 +59,40 @@
 					<Add directory="/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/opt/homebrew/Cellar/make/4.4.1/bin/gmake -j8 -f &quot;/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/3D_ROOM/cmake-build-debug/Makefile&quot;  VERBOSE=1 3D_ROOM/fast"/>
-					<CompileFile command="/opt/homebrew/Cellar/make/4.4.1/bin/gmake -j8 -f &quot;/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/3D_ROOM/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/opt/homebrew/Cellar/make/4.4.1/bin/gmake -j8 -f &quot;/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/3D_ROOM/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/opt/homebrew/Cellar/make/4.4.1/bin/gmake -j8 -f &quot;/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/3D_ROOM/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/opt/homebrew/Cellar/make/4.4.1/bin/gmake -j8 -f &quot;/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/作业1/3D_ROOM/cmake-build-debug/Makefile&quot;  VERBOSE=1 3D_ROOM/fast"/>
+					<CompileFile command="/opt/homebrew/Cellar/make/4.4.1/bin/gmake -j8 -f &quot;/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/作业1/3D_ROOM/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/opt/homebrew/Cellar/make/4.4.1/bin/gmake -j8 -f &quot;/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/作业1/3D_ROOM/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/opt/homebrew/Cellar/make/4.4.1/bin/gmake -j8 -f &quot;/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/作业1/3D_ROOM/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/3D_ROOM/cmake-build-debug"/>
+				<Option working_dir="/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/作业1/3D_ROOM/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/opt/homebrew/Cellar/make/4.4.1/bin/gmake -j8 -f &quot;/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/3D_ROOM/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/opt/homebrew/Cellar/make/4.4.1/bin/gmake -j8 -f &quot;/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/3D_ROOM/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/opt/homebrew/Cellar/make/4.4.1/bin/gmake -j8 -f &quot;/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/3D_ROOM/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/opt/homebrew/Cellar/make/4.4.1/bin/gmake -j8 -f &quot;/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/3D_ROOM/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/opt/homebrew/Cellar/make/4.4.1/bin/gmake -j8 -f &quot;/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/作业1/3D_ROOM/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/opt/homebrew/Cellar/make/4.4.1/bin/gmake -j8 -f &quot;/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/作业1/3D_ROOM/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/opt/homebrew/Cellar/make/4.4.1/bin/gmake -j8 -f &quot;/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/作业1/3D_ROOM/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/opt/homebrew/Cellar/make/4.4.1/bin/gmake -j8 -f &quot;/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/作业1/3D_ROOM/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/3D_ROOM/cmake-build-debug"/>
+				<Option working_dir="/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/作业1/3D_ROOM/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/opt/homebrew/Cellar/make/4.4.1/bin/gmake -j8 -f &quot;/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/3D_ROOM/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/opt/homebrew/Cellar/make/4.4.1/bin/gmake -j8 -f &quot;/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/3D_ROOM/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/opt/homebrew/Cellar/make/4.4.1/bin/gmake -j8 -f &quot;/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/3D_ROOM/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/opt/homebrew/Cellar/make/4.4.1/bin/gmake -j8 -f &quot;/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/3D_ROOM/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/opt/homebrew/Cellar/make/4.4.1/bin/gmake -j8 -f &quot;/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/作业1/3D_ROOM/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/opt/homebrew/Cellar/make/4.4.1/bin/gmake -j8 -f &quot;/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/作业1/3D_ROOM/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/opt/homebrew/Cellar/make/4.4.1/bin/gmake -j8 -f &quot;/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/作业1/3D_ROOM/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/opt/homebrew/Cellar/make/4.4.1/bin/gmake -j8 -f &quot;/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/作业1/3D_ROOM/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/3D_ROOM/lib/glad.c">
+		<Unit filename="/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/作业1/3D_ROOM/lib/glad.c">
 			<Option target="3D_ROOM"/>
 		</Unit>
-		<Unit filename="/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/3D_ROOM/main.cpp">
+		<Unit filename="/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/作业1/3D_ROOM/main.cpp">
 			<Option target="3D_ROOM"/>
 		</Unit>
-		<Unit filename="/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/3D_ROOM/CMakeLists.txt">
+		<Unit filename="/Users/plotnickslope/Desktop/学习资料/计算机图形学/作业/作业1/3D_ROOM/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
