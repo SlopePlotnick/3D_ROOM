@@ -5,7 +5,7 @@
 /*****************************************************************************
         Student Information
         Student ID:072110112
-        Student Name:Ƚ����
+        Student Name:冉中益
 *****************************************************************************/
 #define _CRT_SECURE_NO_WARNINGS
 #include <cstdlib>
@@ -20,8 +20,8 @@ const GLdouble FRUSTDIM = 100.0f;
 int option = 0, i = 0;
 bool enableLight = 1;
 
-/* Do  animation ����*/
-GLfloat angle = 0, tea_p = -40, tea_face = 100, donut_size = 3, seat_pos = 150, board_pos = 0, curtain_pos = 0, quilt_pos = 0;
+/* Do  animation 动画*/
+GLfloat angle = 0, tea_p = -40, tea_face = 100, donut_size = 3, seat_pos = 150, board_pos = 0, curtain_pos = 0, quilt_pos = 0, teapot_size = 0.1;
 GLboolean enable_desklight = false, air_open = false, computer_on = true;
 int mouseX, mouseY;
 bool mouseLeftDown, mouseRightDown;
@@ -33,28 +33,28 @@ GLUquadricObj* quadobj;
 GLfloat light0pos[] = { 0.0f, 1.0f, 0.0f, 0.0f };
 GLfloat light0_mat1[] = { 1.0, 1.0, 1.0, 1.f };
 GLfloat light0_diff[] = { 1.0, 1.0, 1.0, 0.3 };
-GLfloat light_specular[] = { 1.0, 1.0, 1.0, 1.0 };// ���淴���
+GLfloat light_specular[] = { 1.0, 1.0, 1.0, 1.0 };// 镜面反射光
 
-//���ò�����ɫ
+//设置材质颜色
 float blackMat[] = { 0.0f,0.0f,0.0f,1.0f };
 float ambientMat[] = { 0.1f,0.1f,0.1f,1.0f };
 float diffuseMat[] = { 0.4f,0.4f,0.4f,1.0f };
 float specularMat[] = { 0.9f,0.9f,0.9f,1.0f };
 
-GLfloat spot_position[] = { -1.0, -1.0, 0 };// ָ���۹�Ƶķ���
+GLfloat spot_position[] = { -1.0, -1.0, 0 };// 指定聚光灯的方向
 
 void update(int value)
 {
-    angle += 1.0f; // ������ת�Ƕ�
+    angle += 1.0f; // 增加旋转角度
     if (angle > 360.0f)
         angle = 0.0f;
 
-    glutPostRedisplay(); // ���󴰿ڸ���
+    glutPostRedisplay(); // 请求窗口更新
 
-    glutTimerFunc(16, update, 0); // ���ö�ʱ��
+    glutTimerFunc(16, update, 0); // 设置定时器
 }
 
-static GLuint texName[4];//�������
+static GLuint texName[4];//存放纹理
 void loadTexture(char* filename, GLuint& texture)
 {
     static GLint   ImageWidth;
@@ -93,34 +93,34 @@ void loadTexture(char* filename, GLuint& texture)
 
 void init(void) // All Setup For OpenGL Goes Here
 {
-    // ��ȡ�ذ�����
+    // 读取地板纹理
     char filename1[] = "floor.bmp";
     loadTexture(filename1, texName[0]);
-    // ��������
+    // 窗外纹理
     char filename2[] = "out.bmp";
     loadTexture(filename2, texName[1]);
-    // ǽֽ����
+    // 墙纸纹理
     char filename3[] = "star.bmp";
     loadTexture(filename3, texName[2]);
-    // ��������
+    // 电脑纹理
     char filename4[] = "computer.bmp";
     loadTexture(filename4, texName[3]);
 
 
-    glLightfv(GL_LIGHT1, GL_POSITION, light0pos);// ���ù�Դ��λ��
-    glLightfv(GL_LIGHT1, GL_AMBIENT, light0_mat1);// ���ù�Ļ���ǿ�� ������Ambient
-    glLightfv(GL_LIGHT1, GL_DIFFUSE, light0_diff);// ɢɫ�� �����Diffuse
-    glLightfv(GL_LIGHT1, GL_SPECULAR, light_specular);// ���淴���
+    glLightfv(GL_LIGHT1, GL_POSITION, light0pos);// 设置光源的位置
+    glLightfv(GL_LIGHT1, GL_AMBIENT, light0_mat1);// 设置光的环境强度 环境光Ambient
+    glLightfv(GL_LIGHT1, GL_DIFFUSE, light0_diff);// 散色光 漫射光Diffuse
+    glLightfv(GL_LIGHT1, GL_SPECULAR, light_specular);// 镜面反射光
 
-    //    glLightf(GL_LIGHT1, GL_SPOT_CUTOFF, 45);//���þ۹�ƵĽǶ�
-    //    glLightfv(GL_LIGHT1, GL_SPOT_DIRECTION, spot_position);//ָ���۹�Ƶķ���
+    //    glLightf(GL_LIGHT1, GL_SPOT_CUTOFF, 45);//设置聚光灯的角度
+    //    glLightfv(GL_LIGHT1, GL_SPOT_DIRECTION, spot_position);//指定聚光灯的方向
 
-    // ���ʺ���ɫ
+    // 材质和颜色
     glMaterialfv(GL_FRONT, GL_AMBIENT, ambientMat);
     glMaterialfv(GL_FRONT, GL_DIFFUSE, diffuseMat);
     glMaterialfv(GL_FRONT, GL_SPECULAR, specularMat);
 
-    // �򿪹���
+    // 打开光照
     glEnable(GL_LIGHTING);
     glEnable(GL_LIGHT1);
 
@@ -134,8 +134,8 @@ void init(void) // All Setup For OpenGL Goes Here
 void display(void) // Here's Where We Do All The Drawing
 {
     // TODO:
-    // ��ʼ��
-    // �������
+    // 初始化
+    // 清除缓存
     glClearColor(0.0, 0.0, 0.0, 1);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
 
@@ -147,7 +147,7 @@ void display(void) // Here's Where We Do All The Drawing
     glRotatef(cameraAngleX, 1, 0, 0);
     glRotatef(cameraAngleY, 0, 1, 0);
 
-    // ���ʳ�ʼ��
+    // 材质初始化
     GLfloat no_mat[] = { 0.0,0.0,0.0,1.0 };
     GLfloat mat_diffuse[] = { 0.9,0.9,0.9,1.0 };
     GLfloat mat_specular[] = { 0.3,0.3,0.3,1.0 };
@@ -180,10 +180,10 @@ void display(void) // Here's Where We Do All The Drawing
 
     quadobj = gluNewQuadric();
 
-    // �˴��Ǻ��Ļ��ư��
+    // 此处是核心绘制板块
 
-    // ǽ����� ��ʱ�������ǽֽ
-    // ��ǽ
+    // 墙面绘制 有时间可以做墙纸
+    // 后墙
     glPushMatrix();
     glBegin(GL_QUADS);
     glColor3f(0.6f, 0.4f, 0.7f);
@@ -193,7 +193,7 @@ void display(void) // Here's Where We Do All The Drawing
     glVertex3f(275.0f, 165.0f, -220.0f);
     glEnd();
     glPopMatrix();
-    // �컨��
+    // 天花板
     glPushMatrix();
     glBegin(GL_QUADS);
     glColor3f(0.695, 0.703, 0.699);
@@ -203,7 +203,7 @@ void display(void) // Here's Where We Do All The Drawing
     glVertex3f(275.0f, 165.0f, -220.0f);
     glEnd();
     glPopMatrix();
-    // �ذ�
+    // 地板
     glPushMatrix();
     glEnable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, texName[0]); // floor
@@ -219,8 +219,8 @@ void display(void) // Here's Where We Do All The Drawing
     glEnd();
     glDisable(GL_TEXTURE_2D);
     glPopMatrix();
-    //�˴������Խ��Ż��������������۳̶�
-    // ��ǽ
+    //此处还可以接着绘制线条增加美观程度
+    // 右墙
     glPushMatrix();
     glEnable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, texName[2]); // wall
@@ -236,7 +236,7 @@ void display(void) // Here's Where We Do All The Drawing
     glEnd();
     glDisable(GL_TEXTURE_2D);
     glPopMatrix();
-    // ��ǽ
+    // 左墙
     glPushMatrix();
     glEnable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, texName[2]); // wall
@@ -253,9 +253,9 @@ void display(void) // Here's Where We Do All The Drawing
     glDisable(GL_TEXTURE_2D);
     glPopMatrix();
 
-    // ��̨����
+    // 窗台绘制
     glPushMatrix();
-    // ��̨
+    // 垫台
     glPushMatrix();
     glBegin(GL_QUADS);
     glColor3f(0.695, 0.703, 0.699);
@@ -264,7 +264,7 @@ void display(void) // Here's Where We Do All The Drawing
     glVertex3f(275, -60, -219);
     glVertex3f(275, -50, -219);
     glPopMatrix();
-    // ��̨�·�
+    // 垫台下方
     glPushMatrix();
     glBegin(GL_QUADS);
     glColor3f(0.2431, 0.2431, 0.2706);
@@ -273,7 +273,7 @@ void display(void) // Here's Where We Do All The Drawing
     glVertex3f(275, -165, -219);
     glVertex3f(275, -60, -219);
     glPopMatrix();
-    // ����
+    // 窗框
     glBegin(GL_QUADS);
     glColor3f(0.0549, 0.0980, 0.2078);
     glVertex3f(-275, 165, -219);
@@ -309,7 +309,7 @@ void display(void) // Here's Where We Do All The Drawing
     glVertex3f(5, -50, -219);
     glVertex3f(5, 165, -219);
     glEnd();
-    // ����
+    // 窗外
     glPushMatrix();
     glEnable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, texName[1]); // outside
@@ -325,7 +325,7 @@ void display(void) // Here's Where We Do All The Drawing
     glVertex3f(265, 155, -219);
     glEnd();
     glDisable(GL_TEXTURE_2D);
-    // ����
+    // 窗帘
     glPushMatrix();
     glColor3f(0.7529, 0.6941, 0.5804);
     glBegin(GL_QUADS);
@@ -343,7 +343,7 @@ void display(void) // Here's Where We Do All The Drawing
     glPopMatrix();
     glPopMatrix();
 
-    // ���Ƶ���
+    // 绘制灯泡
     glPushMatrix();
     glMaterialfv(GL_FRONT, GL_EMISSION, light0_mat1);
     glColor3f(0.8f, 0.8f, 0.8f);
@@ -353,16 +353,16 @@ void display(void) // Here's Where We Do All The Drawing
     glPopMatrix();
     glMaterialfv(GL_FRONT, GL_EMISSION, no_mat);
 
-    // �Ҳ����
+    // 右侧绘制
     glPushMatrix();
-    // ����
+    // 桌面
     glPushMatrix();
     glColor3f(1.0, 1.0, 1.0);
     glTranslatef(220, -85, 20);
     glScalef(100, 15, 200);
     glutSolidCube(1);
     glPopMatrix();
-    // ����
+    // 椅子
     glTranslatef(seat_pos, -165.f, 0.f);
     glPushMatrix();
     glColor3f(0.0f, 0.0f, 0.0f);
@@ -415,14 +415,14 @@ void display(void) // Here's Where We Do All The Drawing
     glRotatef(0, 1.f, 0.f, 0.f);
     gluCylinder(quadobj, 3.f, 3.f, 84, 20, 20);
     glPopMatrix();
-    // ����
+    // 坐垫
     glPushMatrix();
     glTranslatef(15.f, 37.f, 40.f);
     glScalef(30.f, 5.0f, 82.f);
     glutSolidCube(1.f);
     glPopMatrix();
     glTranslatef(-seat_pos, 100.f, -98.f);
-    // ̨��
+    // 台灯
     glPushMatrix();
     glColor3f(0.8902, 0.3843, 0.1647);
     glTranslatef(230, -15, 100);
@@ -448,7 +448,7 @@ void display(void) // Here's Where We Do All The Drawing
     glutSolidSphere(2.5, 12.5, 50.f);
     glPopMatrix();
     glMaterialfv(GL_FRONT, GL_EMISSION, no_mat);
-    // ����Ͱ���
+    // 抽屉和把手
     glTranslatef(0, 0, 200);
     glPushMatrix();
     glPushMatrix(); // 1
@@ -525,22 +525,22 @@ void display(void) // Here's Where We Do All The Drawing
     glPopMatrix();
     glPopMatrix();
     glTranslatef(0, 0, -200);
-    // ��������
+    // 抽屉主体
     glPushMatrix();
     glColor3f(0.0549, 0.0980, 0.2078);
     glTranslatef(250, 30, 250);
     glScalef(50, 30, 200);
     glutSolidCube(1);
     glPopMatrix();
-    // ����Ҳ����
+    // 完成右侧绘制
     glPopMatrix();
 
-    // ������
+    // 左侧绘制
     glPushMatrix();
-    // ��
+    // 床
     glTranslatef(-220, -165.f, -40.f);
     glPushMatrix();
-    // ֧��
+    // 支撑
     glPushMatrix();
     glColor3f(0, 0, 0);
     glTranslatef(0.f, 0.f, 0.f);
@@ -565,21 +565,21 @@ void display(void) // Here's Where We Do All The Drawing
     glRotatef(-90, 1.f, 0.f, 0.f);
     gluCylinder(quadobj, 10.f, 10.f, 35, 20, 20);
     glPopMatrix();
-    // ����
+    // 床板
     glPushMatrix();
     glColor3f(0.8706, 0.8000, 0.6824);
     glTranslatef(35, 42, 20);
     glScalef(100, 15, 230);
     glutSolidCube(1);
     glPopMatrix();
-    // ����
+    // 被子
     glPushMatrix();
     glColor3f(0.6, 0.1686, 0.1608);
     glTranslatef(35, 54, 60.5);
     glScalef(100, 10, 150);
     glutSolidCube(1);
     glPopMatrix();
-    // ��ͷ
+    // 枕头
     glPushMatrix();
     glColor3f(0.8118, 0.7922, 0.7725);
     glTranslatef(40, 54, -25);
@@ -588,15 +588,15 @@ void display(void) // Here's Where We Do All The Drawing
     glPopMatrix();
     glPopMatrix();
     glTranslatef(220, 165.f, 40.f);
-    // �յ�
+    // 空调
     glPushMatrix();
     glTranslatef(-265, 25, 0);
     glScalef(2, 2, 2);
-    if (air_open) {// ���յ�
+    if (air_open) {// 开空调
         glPushMatrix();
         glTranslatef(0, 10, -2);
         glScalef(8.3, 20, 86);
-        glColor3f(1.0, 1.0, 1.0);// ��ɫ
+        glColor3f(1.0, 1.0, 1.0);// 白色
         glutSolidCube(1);
         glLineWidth(4);
         glColor3f(1, 1, 1);
@@ -608,7 +608,7 @@ void display(void) // Here's Where We Do All The Drawing
         glPushMatrix();
         glTranslatef(0, -1, 0);
         glScalef(0.001, 0.001, 83);
-        glColor3f(0.0, 0.0, 0.0);// ��ɫ
+        glColor3f(0.0, 0.0, 0.0);// 黑色
         glutSolidCube(1);
         glLineWidth(3);
         glColor3f(0.0, 0.0, 0.0);
@@ -619,7 +619,7 @@ void display(void) // Here's Where We Do All The Drawing
         glPushMatrix();
         glTranslatef(3.0, -0.5, 0);
         glScalef(0.001, 0.001, 83);
-        glColor3f(0.0, 0.0, 0.0);// ��ɫ
+        glColor3f(0.0, 0.0, 0.0);// 黑色
         glutSolidCube(1);
         glLineWidth(3);
         glColor3f(0.0, 0.0, 0.0);
@@ -629,11 +629,11 @@ void display(void) // Here's Where We Do All The Drawing
 
     }
     else
-    {// �ؿյ�
+    {// 关空调
         glPushMatrix();
         glTranslatef(0, 10, 0);
         glScalef(8.3, 20, 86);
-        glColor3f(1.0, 1.0, 1.0);// ��ɫ
+        glColor3f(1.0, 1.0, 1.0);// 白色
         glutSolidCube(1);
         glLineWidth(4);
         glColor3f(1, 1, 1);
@@ -643,10 +643,10 @@ void display(void) // Here's Where We Do All The Drawing
     }
     glPopMatrix();
 
-    // ���������
+    // 完成左侧绘制
     glPopMatrix();
 
-    // ����
+    // 茶桌
 //    glTranslatef(0, 0, 100);
     glPushMatrix();
     glTranslatef(0.f, -75.f, -50.f);
@@ -675,7 +675,7 @@ void display(void) // Here's Where We Do All The Drawing
     glTranslatef(-30.f, 10.f, 0.f);
     glRotatef(-90.f, 0.f, 1.f, 0.f);
     glScalef(100.f, 100.0f, -100.f);
-    glutSolidTeapot(0.1);
+    glutSolidTeapot(teapot_size);
     glPopMatrix();
     glPushMatrix();
     glColor3f(0, 0, 0);
@@ -715,13 +715,13 @@ void display(void) // Here's Where We Do All The Drawing
     }
     glPopMatrix();
 
-    // ������л���
+    // 完成所有绘制
     glPopMatrix();
 
     glutSwapBuffers();
     glFlush();
 
-    // ˢ���������
+    // 刷新整个框架
     glutPostRedisplay();
 
 }
@@ -744,7 +744,7 @@ void keyboard(unsigned char key, int x, int y) // Handle the keyboard events her
         case '\033': //press 'esc' to quit
             exit(0);
             break;
-        case '1': // �����ƹ�
+        case '1': // 减弱灯光
             if (enableLight)
                 if (light0_mat1[0] >= 0) {
                     for (i = 0; i <= 3; i++) {
@@ -754,11 +754,11 @@ void keyboard(unsigned char key, int x, int y) // Handle the keyboard events her
                     }
                     glLightfv(GL_LIGHT1, GL_AMBIENT, light0_mat1);
                     glLightfv(GL_LIGHT1, GL_DIFFUSE, light0_diff);
-                    glLightfv(GL_LIGHT1, GL_SPECULAR, light_specular);// ���淴���
+                    glLightfv(GL_LIGHT1, GL_SPECULAR, light_specular);// 镜面反射光
                     glEnable(GL_LIGHT1);
                 }
             break;
-        case '2': // ��ǿ�ƹ�
+        case '2': // 增强灯光
             if (enableLight)
                 if (light0_mat1[0] <= 1) {
                     for (i = 0; i <= 3; i++) {
@@ -768,11 +768,11 @@ void keyboard(unsigned char key, int x, int y) // Handle the keyboard events her
                     }
                     glLightfv(GL_LIGHT1, GL_AMBIENT, light0_mat1);
                     glLightfv(GL_LIGHT1, GL_DIFFUSE, light0_diff);
-                    glLightfv(GL_LIGHT1, GL_SPECULAR, light_specular);// ���淴���
+                    glLightfv(GL_LIGHT1, GL_SPECULAR, light_specular);// 镜面反射光
                     glEnable(GL_LIGHT1);
                 }
             break;
-        case '3': // �򿪴���
+        case '3': // 打开窗帘
             if (curtain_pos <= 200)
             {
                 curtain_pos += 10;
@@ -789,7 +789,7 @@ void keyboard(unsigned char key, int x, int y) // Handle the keyboard events her
                     }
             }
             break;
-        case '4': // �رմ���
+        case '4': // 关闭窗帘
             if (curtain_pos >= 0)
             {
                 curtain_pos -= 10;
@@ -806,23 +806,23 @@ void keyboard(unsigned char key, int x, int y) // Handle the keyboard events her
                     }
             }
             break;
-        case '5': // ������
+        case '5': // 推椅子
             if (seat_pos <= 150)
                 seat_pos++;
             break;
-        case '6': // ������
+        case '6': // 拉椅子
             if (seat_pos >= 130)
                 seat_pos--;
             break;
-        case 's': // ������
+        case 's': // 拉抽屉
             if (board_pos == 0)
                 board_pos = 20;
             break;
-        case 'd': // �Ƴ���
+        case 'd': // 推抽屉
             if (board_pos == 20)
                 board_pos = 0;
             break;
-        case 'a': // ���صƹ�
+        case 'a': // 开关灯光
             if (enableLight)
             {
                 enableLight = false;
@@ -840,26 +840,34 @@ void keyboard(unsigned char key, int x, int y) // Handle the keyboard events her
                     light0_diff[i] = 1.0;
                 }
                 glLightfv(GL_LIGHT1, GL_AMBIENT, light0_mat1);
-                glLightfv(GL_LIGHT1, GL_DIFFUSE, light0_diff);// ɢɫ�� �����Diffuse
+                glLightfv(GL_LIGHT1, GL_DIFFUSE, light0_diff);// 散色光 漫射光Diffuse
 
                 glEnable(GL_LIGHT1);
             }
             break;
-        case 'f': // �յ�����
+        case 'f': // 空调控制
             air_open = !air_open;
             break;
-        case 'g': // ���Կ���
+        case 'g': // 电脑控制
             computer_on = !computer_on;
             break;
-        case 'h': // ��ʱ����ת
+        case 'h': // 逆时针旋转
             if (angle >= 360)
                 angle = 0;
             angle++;
             break;
-        case 'j': // ˳ʱ����ת
+        case 'j': // 顺时针旋转
             if (angle <= -360)
                 angle = 0;
             angle--;
+            break;
+        case 'k': // 放大茶壶
+            if (teapot_size <= 0.15)
+                teapot_size += 0.01;
+            break;
+        case 'l': // 缩小茶壶
+            if (teapot_size >= 0.05)
+                teapot_size -= 0.01;
             break;
     }
 }
@@ -916,7 +924,7 @@ int main(int argc, char** argv)
     /*Create a window with title specified */
     glutInitWindowSize(800, 600);
     glutInitWindowPosition(100, 100);
-    glutCreateWindow("072110112 Ƚ����");
+    glutCreateWindow("072110112 冉中益");
 
     init();	/*not GLUT call, initialize several parameters */
 
@@ -925,10 +933,10 @@ int main(int argc, char** argv)
     keyboard stroke */
     glutReshapeFunc(reshape);
     glutDisplayFunc(display);
-    //    glutTimerFunc(0, update, 0); // ������ʱ��
+    //    glutTimerFunc(0, update, 0); // 启动定时器
     glutKeyboardFunc(keyboard);
-    glutMouseFunc(mouseCB);        // ����λ��Ӧ
-    glutMotionFunc(mouseMotionCB); // ��������ʱ�϶����¼�
+    glutMouseFunc(mouseCB);        // 鼠标键位响应
+    glutMotionFunc(mouseMotionCB); // 鼠标键摁下时拖动的事件
 
     /*Enter the GLUT event processing loop which never returns.
     it will call different registered CALLBACK according

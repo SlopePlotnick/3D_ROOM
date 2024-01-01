@@ -24,7 +24,7 @@ int option = 0, i = 0;
 bool enableLight = 1;
 
 /* Do  animation 动画*/
-GLfloat angle = 0,tea_p = -40 , tea_face = 100 , donut_size = 3 , seat_pos = 150, board_pos = 0, curtain_pos = 0, quilt_pos = 0;
+GLfloat angle = 0,tea_p = -40 , tea_face = 100 , donut_size = 3 , seat_pos = 150, board_pos = 0, curtain_pos = 0, quilt_pos = 0, teapot_size = 0.1;
 GLboolean enable_desklight = false, air_open = false, computer_on = true;
 int mouseX, mouseY;
 bool mouseLeftDown, mouseRightDown;
@@ -678,7 +678,7 @@ void display(void) // Here's Where We Do All The Drawing
     glTranslatef(-30.f, 10.f, 0.f);
     glRotatef(-90.f, 0.f, 1.f, 0.f);
     glScalef(100.f, 100.0f, -100.f);
-    glutSolidTeapot(0.1);
+    glutSolidTeapot(teapot_size);
     glPopMatrix();
     glPushMatrix();
     glColor3f(0, 0, 0);
@@ -863,6 +863,14 @@ void keyboard(unsigned char key, int x, int y) // Handle the keyboard events her
             if(angle <= -360)
                 angle = 0;
             angle--;
+            break;
+        case 'k':
+            if (teapot_size <= 0.15)
+                teapot_size += 0.01;
+            break;
+        case 'l':
+            if (teapot_size >= 0.05)
+                teapot_size -= 0.01;
             break;
     }
 }
